@@ -38,6 +38,13 @@ wget https://repository.prace-ri.eu/git/UEABS/ueabs/-/raw/master/quantum_espress
 wget https://repository.prace-ri.eu/git/UEABS/ueabs/-/raw/master/quantum_espresso/test_cases/small/ausurf.in
 ```
 # Run QE on One Compute Node One GPU
+As suggestion rules for runing on GPU [QE on HPC and GPU systems][QE on HPC and GPU systems]:
+
++ 1 GPU : 1 MPI
++ Fill the CPU with OpenMP threads
++ No task groups (-ntg 1)
++ No parallel eigensolver (-ndiag 1), no diagonized?
+
 ```console
 $ cd ~/qe/ausurf
 
@@ -70,3 +77,5 @@ References:
 1. [MaX school][Max school] on Advanced Materials and Molecular Modelling with Quantum ESPRESSO, 
 
 [Max school]: http://www.max-centre.eu/news-events/max-school-advanced-materials-and-molecular-modelling-quantum-espresso
+
+[QE on HPC and GPU systems]: http://qe2019.ijs.si/talks/handson-day5.pdf
