@@ -4,7 +4,7 @@ title:  "Simplify Exascale Workflows with Singularity Container and Environment 
 date:   2022-06-26 04:21:29 +0700
 categories: singularity module
 ---
-Before container based software developement, HPC, High Performance Computing system, administrators use to compile application manually solving libary dependency issues and config applications with environment module. User can load part of softwares as they are only needed. The `advantages of environment modules` are that they allow you to `load and unload software configurations dynamically` in a clean fashion, providing end users with the best experience when it comes to customizing a specific configuration for each application.
+Before container based software has been developemented, HPC or High Performance Computing system, administrators use to compile application manually solving libary dependency issues and config applications with environment module. User can load part of softwares as they are only needed. The `advantages of environment modules` are that they allow you to `load and unload software configurations dynamically` in a clean fashion, providing end users with the best experience when it comes to customizing a specific configuration for each application.
 ```console
 $ module avail
 $ module load gromacs
@@ -119,7 +119,7 @@ $ jupyter notebook --ip 0.0.0.0 --no-browser --notebook-dir /rapids/notebooks
 
 
 ## Multi Node Multi GPUs: MNMG with Kokkos and MPI
-Download the [LAMMPS][LAMMPS] Molecular Dynamics Simulator, Lennard Jones fluid dataset to run this example.
+Download the [LAMMPS][LAMMPS] `Molecular Dynamics Simulator`, Lennard Jones fluid dataset to run this example.
 
 ```console
 $ mkdir LAMMPS_test
@@ -129,23 +129,6 @@ $ wget https://www.lammps.org/inputs/in.lj.txt
 $ module load lammps/15Jun2020
 $ mpirun -n 2 lmp -in in.lj.txt -var x 8 -var y 8 -var z 8 -k on g 2 -sf kk -pk kokkos cuda/aware on neigh full comm device binsize 2.8
 ```
-
-
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-```python
-print ('hello')
-```
-
 
 
 
