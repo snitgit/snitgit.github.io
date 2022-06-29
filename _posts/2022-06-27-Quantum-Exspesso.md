@@ -37,7 +37,7 @@ cd qe/ausurf
 wget https://repository.prace-ri.eu/git/UEABS/ueabs/-/raw/master/quantum_espresso/test_cases/small/Au.pbe-nd-van.UPF
 wget https://repository.prace-ri.eu/git/UEABS/ueabs/-/raw/master/quantum_espresso/test_cases/small/ausurf.in
 ```
-# Run QE on Compute Node
+# Run QE on One Compute Node One GPU
 ```console
 $ cd ~/qe/ausurf
 
@@ -45,6 +45,25 @@ $ module unload *
 $ module load quantum_espresso/v7.0
 $ mpirun -n 1  pw.x -npool 1 -ntg 1 -ndiag 1 -input ausurf.in 
 ```
+Time to finish job is 3 minutes.
+
+
+
+# Run QE on One Compute Node 4 GPUs
+We need to bind UCX/OMPI with script from give URL or 
+
+```console
+$ cd ~/qe/ausurf
+$ wget $ wget https://raw.githubusercontent.com/LStuber/binding/master/binder.sh 
+$ module unload *
+$ module load quantum_espresso/v7.0
+$ mpirun -n 4 binder.sh pw.x -input ausurf.in -npool 4
+
+```
+Time to finish job is 2 minutes.
+
+# Run QE on Multi-Nodes ? 
+Later comming soon...
 
 
 References:
