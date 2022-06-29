@@ -10,7 +10,7 @@ Quantum ESPRESSO is an integrated suite of Open-Source computer codes for electr
 
 What can PWscf do ?
 
-PWscf performs many different kinds of self-consistent calculations of electronic-structure properties within Density-Functional Theory (DFT), using a Plane-Wave (PW) basis set and pseudopotentials (PP).[3]
+PWscf performs many different kinds of self-consistent calculations of electronic-structure properties within Density-Functional Theory (DFT), using a Plane-Wave (PW) basis set and pseudopotentials (PP).[1]
 
 In particular:
 
@@ -57,7 +57,20 @@ Time to finish job is 3 minutes.
 
 
 # Run QE on One Compute Node 4 GPUs
-We need to bind UCX/OMPI with script from give URL or 
+We need to bind UCX/OMPI with script from give URL.
+One important component behind the script is Nvidia Multi-Process-Service or [MPS][MPS].
+
+NVIDIA MPS improves the parallel performance by allowing multiple process to instantaneously share GPU compute resources.
+
+![Nvidia Tranditional: Full process isolation ](/assets/img/qe/full_proc_isolate.png)
+
+Figure: Nvidia Tranditional: Full process isolation
+
+![Nvidia MPS: Full process isolation ](/assets/img/qe/MPS.png)
+
+Figure: Nvidia MPS: Full process isolation
+
+Source: https://www.olcf.ornl.gov/wp-content/uploads/2021/06/MPS_ORNL_20210817.pdf
 
 ```console
 $ cd ~/qe/ausurf
@@ -79,3 +92,5 @@ References:
 [Max school]: http://www.max-centre.eu/news-events/max-school-advanced-materials-and-molecular-modelling-quantum-espresso
 
 [QE on HPC and GPU systems]: http://qe2019.ijs.si/talks/handson-day5.pdf
+
+[MPS]: https://www.olcf.ornl.gov/wp-content/uploads/2021/06/MPS_ORNL_20210817.pdf
