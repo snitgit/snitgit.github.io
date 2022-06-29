@@ -24,7 +24,28 @@ In particular:
 
 + various forms of finite electric fields, with a sawtooth potential or with the modern theory of polarization; 
 
-+ Effective Screening Medium (ESM) method;
++ Effective Screening Medium (ESM) method
+
+# Download Dataset:
+
+The environment variable BENCHMARK_DIR will be used throughout the example to refer to the directory containing the AUSURF112 input files.
+```console
+cd ~
+mdkir qe
+mkdir qe/ausurf
+cd qe/ausurf
+wget https://repository.prace-ri.eu/git/UEABS/ueabs/-/raw/master/quantum_espresso/test_cases/small/Au.pbe-nd-van.UPF
+wget https://repository.prace-ri.eu/git/UEABS/ueabs/-/raw/master/quantum_espresso/test_cases/small/ausurf.in
+```
+# Run QE on Compute Node
+```console
+$ cd ~/qe/ausurf
+
+$ module unload *
+$ module load quantum_espresso/v7.0
+$ mpirun -n 1  pw.x -npool 1 -ntg 1 -ndiag 1 -input ausurf.in 
+```
+
 
 References:
 1. [MaX school][Max school] on Advanced Materials and Molecular Modelling with Quantum ESPRESSO, 
