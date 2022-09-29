@@ -15,7 +15,11 @@ In this post, instead of manage jobs via SSH terminal or open on demand web port
 
 ## Using SLURM magics
 
+![image.png](attachment:image.png)
+
 Assume, you connect to exascale.mahidol.ac.th portal, and create Jupyter Notebook server.
+
+![image.png](attachment:image.png)
 
 In new jupyter notebook, we need to load IPython slurm extension:
 
@@ -593,12 +597,37 @@ plt.plot(time,pres)
 ```
 
 
+
+
+    [<matplotlib.lines.Line2D at 0x7f3e490ecfd0>]
+
+
+
+
+    
+![Jupyter Notebook Plot](/assets/notebooks/2022-09-03--Reproducible-slurm-notebook_files/2022-09-03--Reproducible-slurm-notebook_31_1.png)
+    
+
+
+
 ```python
 plt.plot(dens,pres[:len(dens)],'b+')
 ```
 
-References:
 
+
+
+    [<matplotlib.lines.Line2D at 0x7f3e49066dc0>]
+
+
+
+
+    
+![Jupyter Notebook Plot](/assets/notebooks/2022-09-03--Reproducible-slurm-notebook_files/2022-09-03--Reproducible-slurm-notebook_32_1.png)
+    
+
+
+References:
     1. Slurm-magin
         https://github.com/NERSC/slurm-magic
     2. Using Jupyter Notebooks to manage SLURM jobs
