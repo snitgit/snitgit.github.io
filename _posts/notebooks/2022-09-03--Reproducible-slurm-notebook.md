@@ -79,15 +79,6 @@ cd Slurm-jupyter-notebook/
 
 
 ```python
-ls
-```
-
-    0-setup.ipynb  2-slurm-analysis.ipynb  [0m[01;34mcities[0m/       [01;34mimg[0m/
-    1-intro.ipynb  3-parallel.ipynb        [01;34mgromacs_job[0m/
-
-
-
-```python
 %cd gromacs_job/
 ```
 
@@ -605,7 +596,7 @@ plt.plot(time,pres)
 
 
     
-![Jupyter Notebook Plot](/assets/notebooks/2022-09-03--Reproducible-slurm-notebook_files/2022-09-03--Reproducible-slurm-notebook_31_1.png)
+![Jupyter Notebook Plot](/assets/notebooks/2022-09-03--Reproducible-slurm-notebook_files/2022-09-03--Reproducible-slurm-notebook_30_1.png)
     
 
 
@@ -623,7 +614,7 @@ plt.plot(dens,pres[:len(dens)],'b+')
 
 
     
-![Jupyter Notebook Plot](/assets/notebooks/2022-09-03--Reproducible-slurm-notebook_files/2022-09-03--Reproducible-slurm-notebook_32_1.png)
+![Jupyter Notebook Plot](/assets/notebooks/2022-09-03--Reproducible-slurm-notebook_files/2022-09-03--Reproducible-slurm-notebook_31_1.png)
     
 
 
