@@ -272,6 +272,12 @@ plt.tight_layout()
 plt.show()
 ```
 
+
+    
+![Jupyter Notebook Plot](/assets/notebooks/2022-09-23-Monai_mednist_tutorial_files/2022-09-23-Monai_mednist_tutorial_16_0.png)
+    
+
+
 ## Prepare training, validation and test data lists
 
 Randomly select 10% of the dataset as validation and 10% as test.
@@ -1132,6 +1138,12 @@ plt.xlabel("epoch")
 plt.plot(x, y)
 plt.show()
 ```
+
+
+    
+![Jupyter Notebook Plot](/assets/notebooks/2022-09-23-Monai_mednist_tutorial_files/2022-09-23-Monai_mednist_tutorial_28_0.png)
+    
+
 
 ## Evaluate the model on test dataset
 
