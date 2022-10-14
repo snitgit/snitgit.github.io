@@ -776,7 +776,7 @@ from IPython.display import Image
 library = gdstk.read_gds('/home/snit.san/chip_design_tape_out/OpenLane/designs/picorv32a/runs/RUN_2022.10.14_10.45.33/results/final/gds/picorv32.gds')
 top_cells = library.top_level()
 top_cells[0].write_svg('picorv32.svg')
-cairosvg.svg2png(url='picorv32.svg', write_to='picorv32.png', scale=2.0)
+cairosvg.svg2png(url='picorv32.svg', write_to='picorv32.png', scale=0.08)
 Image('picorv32.png')
 ```
 
@@ -792,8 +792,6 @@ Image('picorv32.png')
 Singularity image is shared at */shared/software/singularity/images/openlane.sif*. With given container image you can modify "Makefile" to mount software for your physcial desing.
 
 If you want to start design and simulation then it is short introduction to __Verilator__ [7-8]
-
-# Hope this help someone. It is aim to acknowledgment back country that let me through the journey from aboard. 
 
 ## References:
 1. OpenROAD project 
