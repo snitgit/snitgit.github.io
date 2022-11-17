@@ -1,8 +1,8 @@
 # Drug Discovery: Protein Folding on IBM's Qiskit Quantum Information Framework : NVIDIA A100 exascale.mahidol.ac.th
 
-Before Covid there is shown of obstacles for Quantum Supremacy[7]. December 2021, simulating the sycamore quantum supremacy circuit hooked our future "optimazation algorithms" imagination[8]. After than we have worked cuQuantum but there is not progress after a year. Until we get one motivation that we can try quantum information on GPU[9]. Finally, end up with IBM's Qiskit framework for two reasons that very youtube video and tutorial[10]. The second that Qiskit drawn our attention is "Protien folding"[11]. Having benn tried on QAOA on GPUs, we are VQE is promissing. 
+Before Covid-19 there is shown of obstacles for Quantum Supremacy[7]. December 2021, simulating the sycamore quantum supremacy circuit hooked our future "optimazation algorithms" imagination[8]. After than we have worked cuQuantum but there is not progress after a year. Until we get one motivation that we can try quantum information on GPU[9]. Finally, end up with IBM's Qiskit framework for two reasons that very youtube video and tutorial[10]. The second that Qiskit drawn our attention is "Protien folding"[11]. Having been tried on QAOA on GPUs, we are VQE is promissing. 
 
-The follo detail actual 99.9999% from the source [11] with modigy to run on GPUs and cuQuantum.
+The follo detail actually 99.9999% from the source [11] with migration to run on GPUs and cuQuantum.
 
 
 ### Introduction
