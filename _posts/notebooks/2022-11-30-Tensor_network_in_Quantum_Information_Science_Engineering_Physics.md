@@ -297,19 +297,19 @@ for image in BAS:
 
 Reference:
 
-1. Quantum Tensor Networks and Entanglement 
+1.Quantum Tensor Networks and Entanglement 
 https://cordis.europa.eu/project/id/647905
 
 2.Achieving Supercomputing-Scale Quantum Circuit Simulation with the NVIDIA DGX cuQuantum Appliance
 https://developer.nvidia.com/blog/achieving-supercomputing-scale-quantum-circuit-simulation-with-the-dgx-cuquantum-appliance/
 
-3. Lectures on Quantum Tensor Networks, Jacob Biamonte
+3.Lectures on Quantum Tensor Networks, Jacob Biamonte
 https://arxiv.org/abs/1912.10049
 
-4. Lightning-fast simulations with PennyLane and the NVIDIA cuQuantum SDK
+4.Lightning-fast simulations with PennyLane and the NVIDIA cuQuantum SDK
 https://pennylane.ai/blog/2022/07/lightning-fast-simulations-with-pennylane-and-the-nvidia-cuquantum-sdk/
 
-5. Tensor-network quantum circuits
+5.Tensor-network quantum circuits
 https://pennylane.ai/qml/demos/tutorial_tn_circuits.html
 
 
