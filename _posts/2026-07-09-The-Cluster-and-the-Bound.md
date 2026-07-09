@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Cluster and the Bound: What HPC Actually Buys, and Where Physics Says Stop"
-date:   2026-07-09 16:00:00 +0700
+date:   2026-07-09 14:00:00 +0700
 categories: HPC InformationTheory
 tags: [hpc, simulation, parallel-computing, information-theory, shannon]
 ---
