@@ -105,9 +105,17 @@ That opens several uses beyond the classroom:
 
 Lesson 5 applies here twice over. The first time two agents shared our node, they destroyed each other's work. Per-tenant isolation is a prerequisite for running agents at all.
 
+## Buy vs. build
+
+Renting VMs from a public cloud is fast. Swipe a card, and the sandbox is provisioning before class starts. But that speed is rented too: the answer holds only as long as the invoice is paid. Five years from now, the same lab exercise means renegotiating the same contract, relearning the same billing console and re-teaching the same workarounds. A subscription doesn't accumulate. It just renews.
+
+Building the lab on the department's own Slurm cluster is the opposite bet, and a harder one. Every bit of autonomy a cloud gives students by default has to be won back from a scheduler that was built to restrict access, not hand it out. But what gets built isn't a subscription. It's capability. The scheduling patterns, the troubleshooting scars and the scripts that finally coax 52 VMs out of a research cluster belong to the department, not a vendor, and they compound. Students learn on a platform their own department built and can read the scripts that run it, which no contract provides. The faculty who built it are still the ones who understand it a decade later.
+
+That is the real trade-off under "cloud vs. cluster". Buying gets you a fast answer that lasts only as long as the contract. Building is slower, but it is the only one of the two that adds to an institution's own capacity across a career, not just a semester.
+
 ## Why this is a good bet for Thai universities
 
-As with [formal verification]({% post_url 2026-09-03-Lean4-the-Missing-Piece-for-Reliable-AI %}), the asymmetry is the argument. Renting cloud capacity is **budget-bound**: the cost scales with every student and every semester, and it leaves the university with nothing when the credits run out. Building a teaching cloud on existing clusters is **skill-bound**. It needs a few people who understand schedulers, hypervisors and images, and what they build stays with the institution. Many Thai universities already run clusters, and the national research network links them. Base images, topologies and lab sheets could be shared across institutions as easily as papers.
+As with [formal verification]({% post_url 2026-09-03-Lean4-the-Missing-Piece-for-Reliable-AI %}), the asymmetry is the argument: renting is **budget-bound** and building is **skill-bound**. A teaching cloud needs a few people who understand schedulers, hypervisors and images, and what they build stays with the institution. Many Thai universities already run clusters, and the national research network links them. Base images, topologies and lab sheets could be shared across institutions as easily as papers.
 
 Three first steps, in order of effort:
 
