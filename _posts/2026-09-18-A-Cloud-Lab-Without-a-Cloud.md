@@ -18,7 +18,7 @@ A public cloud handles this easily, and that is exactly the trap. The bill is in
 
 The obvious question: can an HPC cluster behave like a small private cloud for one afternoon a week?
 
-## HPC is not a cloud (and that's fine)
+## HPC is not a cloud
 
 A cluster scheduler is built to run batch jobs for users who are *not* trusted with the machine. Everything a cloud does to give you a VM, an HPC site deliberately takes away:
 
@@ -59,13 +59,13 @@ What it achieved on the first full-scale run:
 - Clean power-off of every VM in **8 seconds**; about **100 MB** of state per VM saved between sessions
 - A simulated node reboot: disks and base image restored from the shared filesystem, student files intact, **SSH host keys unchanged**
 
-## Lessons learned (the honest part)
+## Lessons learned
 
-**1. `--time=04:00` is four *minutes*.** Slurm reads `MM:SS` before `HH:MM:SS`. An earlier iteration of this project wrote `--time=00:15` and `--time=04:00`, saw jobs die at exactly one minute, and concluded that the cluster had a hard 60-second limit. A whole layer of workarounds followed: chunked downloads, resumable copies, jobs split into sub-minute steps. One `sacct` query showed every job's limit had been 00:01:00, and the partition's real limit was *unlimited*. The lesson is older than HPC: **measure the constraint before you engineer around it.**
+**1. `--time=00:15` is fifteen *seconds*.** Slurm reads `MM:SS` before `HH:MM:SS`, so `04:00` means four minutes, not four hours. An earlier iteration of this project wrote `--time=00:15`, saw jobs die at exactly one minute (Slurm's minimum), and concluded that the cluster had a hard 60-second limit. A whole layer of workarounds followed: chunked downloads, resumable copies, jobs split into sub-minute steps. One `sacct` query showed every job's limit had been 00:01:00, while the partition's real limit was *unlimited*. The lesson is older than HPC: **measure the constraint before you engineer around it.**
 
 **2. The capability wall is only on the host.** Lab platforms such as PNETLab, EVE-NG, GNS3 and ContainerLab need to create bridges and virtual cables, and we could not do that on the host. Inside a VM, though, we are root on our own kernel. The cluster's CPUs support nested virtualization, so a guest can run its own hypervisor. This moves "root" down one layer instead of asking anyone for it. The pilot worked on the first try: PNETLab installed from its official repository inside an Ubuntu VM, booted its own kernel, built the ten bridges our account may not create on the host, and served its web UI through a forwarded port. The whole build took 25 minutes and needed no administrator.
 
-**3. A router image belongs to its hardware.** The original plan was to copy the IOS image off a physical Cisco 1841 and run it in an emulator for every group. It doesn't work: an IOS image only boots on its own platform, and that emulator doesn't emulate the 1841. It is also outside the image's licence. An open network OS (VyOS) runs unmodified in the same VMs, installs unattended in six minutes, and costs nothing per copy.
+**3. A router image belongs to its hardware.** The original plan was to copy the IOS image off a physical Cisco 1841 and run it in an emulator for every group. It doesn't work: an IOS image only boots on its own platform, and that emulator doesn't emulate the 1841. It is also likely outside the image's licence terms. An open network OS (VyOS) runs unmodified in the same VMs, installs unattended in six minutes, and costs nothing per copy.
 
 **4. Mirrors matter more than cores.** Through the campus proxy, the official Ubuntu archive delivered about **0.25 MB/s**. Mirrors hosted in Thailand delivered **3.5–8 MB/s**, roughly 15–30× faster. On a platform that builds images, the choice of mirror decided whether a step took an hour or three minutes.
 
@@ -107,7 +107,7 @@ Lesson 5 applies here twice over. The first time two agents shared our node, the
 
 ## Why this is a good bet for Thai universities
 
-As with formal verification, the asymmetry is the argument. Renting cloud capacity is **budget-bound**: the cost scales with every student and every semester, and it leaves the university with nothing when the credits run out. Building a teaching cloud on existing clusters is **skill-bound**. It needs a few people who understand schedulers, hypervisors and images, and what they build stays with the institution. Many Thai universities already run clusters, and the national research network links them. Base images, topologies and lab sheets could be shared across institutions as easily as papers.
+As with [formal verification]({% post_url 2026-09-03-Lean4-the-Missing-Piece-for-Reliable-AI %}), the asymmetry is the argument. Renting cloud capacity is **budget-bound**: the cost scales with every student and every semester, and it leaves the university with nothing when the credits run out. Building a teaching cloud on existing clusters is **skill-bound**. It needs a few people who understand schedulers, hypervisors and images, and what they build stays with the institution. Many Thai universities already run clusters, and the national research network links them. Base images, topologies and lab sheets could be shared across institutions as easily as papers.
 
 Three first steps, in order of effort:
 
