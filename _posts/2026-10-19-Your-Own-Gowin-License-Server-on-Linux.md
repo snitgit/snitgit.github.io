@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Your Own Gowin License Server on Linux: Keeping an Automated FPGA Flow Alive"
-date:   2026-10-19 18:00:00 +0700
+date:   2026-10-19 16:00:00 +0700
 categories: FPGA EDA
 tags: [gowin, fpga, license-server, tang-mega-138k, linux, systemd, eda, ai-agents, thailand]
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "ตั้งเซิร์ฟเวอร์ License ของ Gowin เองบน Linux: ให้ flow ออกแบบ FPGA อัตโนมัติทำงานได้ไม่สะดุด"
-date:   2026-10-19 18:30:00 +0700
+date:   2026-10-19 16:30:00 +0700
 categories: FPGA EDA
 tags: [gowin, fpga, license-server, tang-mega-138k, linux, systemd, eda, ai-agents, thailand]
 ---
