@@ -39,7 +39,7 @@ On the Gowin website, open Support → **Apply License** and choose:
 - **Operating System:** Linux
 - **PC MAC Address:** the MAC of the machine that will *run the server* (`cat /sys/class/net/<nic>/address`)
 
-Our reply came within a day: a 10-seat floating license, valid for one year. Check it before going further:
+Our reply came within a day: a 10-seat floating license, valid for one year. (Gowin later raised it to 50 seats; see the lessons below.) Check it before going further:
 
 ```bash
 grep -E "MODE|HOST_ID|EXP_DATE|COUNT" gowin_E_*_floating.lic
@@ -112,7 +112,7 @@ The log confirms it:
 ```
 Server started.
 Listening Port: 10559
-License Count: 10
+License Count: 50
 ```
 
 ### 5. Point the clients at it
@@ -141,7 +141,7 @@ A floating license must be served; only the server reads the file.
 ```
 Checkin
 user: alice@buildhost
-total: 10, used: 0, remain: 10
+total: 50, used: 0, remain: 50
 ```
 
 A passing version check doesn't prove device entitlement, though. Build something small for your actual part:
@@ -170,7 +170,7 @@ If `impl/pnr/cnt.fs` appears, the whole path works: license, device, synthesis, 
 1. **Don't put it in a container.** The license is locked to a MAC address. A Kubernetes pod gets a new random MAC every time it restarts, so the license fails. Run the server on a fixed machine and let containers connect to it over the network.
 2. **Virtual machines need a pinned MAC.** Our server runs on a KVM VM. Its MAC stays the same unless someone recreates the network card, so we wrote it into the admin notes.
 3. **The server has no authentication.** Anyone who can reach the port can take a seat. Firewall it to your own network.
-4. **Seats are shared.** We opened ours to the whole campus. That's good for students, but a full server also blocks your own overnight runs, so ask for enough seats.
+4. **Seats are shared.** We opened ours to the whole campus. That's good for students, but a full server also blocks your own overnight runs, so ask for enough seats. When we asked, Gowin reissued our license with 50 seats instead of 10, on the same day.
 5. **Put the renewal in your calendar.** Floating licenses expire. Re-apply a month early.
 
 ## Why this is worth doing for Thai universities
